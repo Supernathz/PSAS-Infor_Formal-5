@@ -6,13 +6,13 @@ header{
     position:sticky;
     display:flex;
     justify-content: flex-start;
-    gap:120px;
+    gap:150px;
     top:0;
     background-color: #545454;
     width:100%;
     height: auto;
     align-items:center;
-    font-size:1rem;
+    font-size:25px;
     font-weight:bold;
     color:white;
     padding: 10px 10px 10px 15px;
@@ -55,7 +55,7 @@ nav a:hover{
 
 .banner{
     display:flex;
-    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%), url("../banner.jpg");
+    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%), url("assets/banner.jpg");
     min-height:400px;
     background-attachment: fixed;
     background-position: center;
@@ -100,6 +100,16 @@ section{
     margin:10px 10px 10px 10px;
     border-radius:10%;
 }
+.founders{
+    display:flex;
+    width:100%;
+    height:auto;
+    padding:20px 20px 20px 20px;
+    background-image: radial-gradient(rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("assets/banner.jpg");
+
+
+
+
 
 footer{
     display:flex;
