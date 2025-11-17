@@ -47,7 +47,7 @@ nav a{
     color:white;
     transition: color 0.5s;
     height:auto;
-    font-size:15px;
+    font-size:20px;
 }
 nav a:hover{
     color:#ffcc00;
@@ -107,7 +107,7 @@ section{
     padding:20px 20px 20px 20px;
     background-image: radial-gradient(circle at center, rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("../assets/banner.jpg");
     flex-direction:column;
-    
+}
 .founderbox{
     display:Flex;
     width:100%
