@@ -8,5 +8,5 @@ Tugas kolaborasi di akhir tahun 2025 yang menggabungkan Geografi dengan Informat
 - Nathanael Jay Wijaya
 
 doakan dibolehin pake github daripada trinket
-
+doakan boleh javascript
 glory to IptoTech
