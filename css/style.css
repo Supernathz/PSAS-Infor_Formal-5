@@ -12,17 +12,10 @@ header{
     width:100%;
     height: auto;
     align-items:center;
-    font-size:15px;
     font-weight:bold;
     color:white;
     padding: 10px 10px 10px 15px;
     z-index:1000;
-}
-header h2 {
-    font-size:30px;
-}
-header h4 {
-    font-size:17px;
 }
 .logo{
     width:100px;
@@ -40,12 +33,12 @@ nav{
 .navtext h2 {
     margin: 0;           
     margin-bottom: 5px; 
-    font-size: 1.5rem; 
+    font-size: 30px; 
 }
 
 .navtext h4 {
     margin: 0;          
-    font-size: 1rem;     
+    font-size: 20px;     
     color: #ddd;         
 }
 
@@ -54,6 +47,7 @@ nav a{
     color:white;
     transition: color 0.5s;
     height:auto;
+    font-size:20px;
 }
 nav a:hover{
     color:#ffcc00;
