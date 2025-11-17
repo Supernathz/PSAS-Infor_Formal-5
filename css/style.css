@@ -12,11 +12,17 @@ header{
     width:100%;
     height: auto;
     align-items:center;
-    font-size:25px;
+    font-size:20px;
     font-weight:bold;
     color:white;
     padding: 10px 10px 10px 15px;
     z-index:1000;
+}
+header h1 {
+    font-size:25px;
+}
+header h3 {
+    font-size:17px;
 }
 .logo{
     width:100px;
@@ -105,8 +111,23 @@ section{
     width:100%;
     height:auto;
     padding:20px 20px 20px 20px;
-    background-image: radial-gradient(rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("../assets/banner.jpg");
-
+    background-image: radial-gradient(circle at center, rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("../assets/banner.jpg");
+    flex-direction:column;
+    
+.founderbox{
+    display:Flex;
+    width:100%
+    height:auto;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    padding:20px 20px 20px 20px;
+}
+.founderbox img{
+    width:200px;
+    height:100px;
+    border-radius:20px;
+}
 
 
 
