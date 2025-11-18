@@ -215,3 +215,8 @@ footer{
     text-align:flex-start;
     flex-direction: column;
 }
+.kontak{
+    display:flex;
+    align-items:bottom;
+    flex-direction:column;
+}
