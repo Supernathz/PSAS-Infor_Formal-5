@@ -1,6 +1,11 @@
+html{
+    scroll-behavior:smooth;
+}
+
 body {
 background-color: rgb(233, 230, 224);
 font-family: 'Times New Roman', Times, serif;
+margin:0;
 }
 header{
     position:sticky;
@@ -8,7 +13,7 @@ header{
     justify-content: space-between;
     top:0;
     background-color: #545454;
-    width:100%;
+    max-width:100%;
     height: auto;
     align-items:center;
     color:white;
@@ -107,9 +112,9 @@ section{
     margin-right:50px;
 }
 .collage img{
-    width:250px;
-    height:150px;
-    margin:10px 10px 10px 10px;
+    width:200px;
+    height:130px;
+    margin:10px 20px 10px 10px;
     border-radius:10%;
 }
 .founder{
@@ -133,10 +138,12 @@ section{
     padding:20px 20px 20px 20px;
     flex-direction:column;
     max-width: 200px;
+    color:white;
+    font-family:'Trebuchet MS';
 }
 .founderbox img{
     width:200px;
-    height:500px;
+    height:250px;
     border-radius:20px;
 }
 .timeline{
@@ -147,6 +154,9 @@ section{
 }
 .timeline h1{
     font-weight:normal;
+}
+.timeline h4{
+    margin-top:-25px;
 }
 .timeline_line{
     display:flex;
@@ -197,7 +207,8 @@ section{
     border-radius:20px;
     flex-direction:column;
     padding: 30px 30px 30px 30px;
-    margin: -40px 150px 50px 130px;
+    margin: -40px 0 50px 0;
+    max-width: 875px;
 }
 .timeline_title{
     font-weight:bold;
@@ -209,16 +220,41 @@ section{
 }
 footer{
     display:flex;
-    width:100%;
+    max-width:100%;
     height:auto;
     background-color: #545454;
     padding:10px 10px 10px 10px;
     color:white;
     text-align:flex-start;
     flex-direction: column;
+    margin:0;
 }
 .kontak{
     display:flex;
     align-items:bottom;
     flex-direction:column;
+}
+.footertext{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight: bold;
+    margin-bottom:5px;
+    font-size:18px;
+}
+.footertext img{
+    width:30px;
+    height:30px;
+}
+.layanan{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:center;
+    padding:20px 20px 20px 20px;
+    justify-content:center;
+    border-top:3px solid black;
+    border-bottom:3px solid black;
+}
+.layanan h1{
 }
