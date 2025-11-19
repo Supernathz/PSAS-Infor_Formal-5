@@ -1,328 +1,447 @@
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: rgb(233, 230, 224);
     font-family: 'Times New Roman', Times, serif;
-    margin:0;
+    margin: 0;
 }
 
-/* ===================== HEADER ===================== */
-
-header{
-    position:sticky;
-    display:flex;
+header {
+    position: sticky;
+    display: flex;
     justify-content: space-between;
-    top:0;
+    top: 0;
     background-color: #545454;
-    max-width:100%;
+    max-width: 100%;
     height: auto;
-    align-items:center;
-    color:white;
+    align-items: center;
+    color: white;
     padding: 10px 10px 10px 15px;
-    z-index:1000;
-    margin:0;
+    z-index: 1000;
+    margin: 0;
 }
-.logo{
-    width:100px;
+
+.logo {
+    width: 100px;
 }
-nav{
-    display:flex;
-    gap:25px;
-}
-nav a{
-    font-weight:bold;
-    text-decoration:none;
-    color:white;
-    transition: color 0.5s;
-    font-size:20px;
-}
-nav a:hover{
-    color:#ffcc00;
+
+nav {
+    display: flex;
+    gap: 25px;
 }
 
 .navtext {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
+
 .navtext h2 {
     margin: 0;
-    margin-bottom: 5px; 
-    font-size: 25px; 
+    margin-bottom: 5px;
+    font-size: 25px;
 }
+
 .navtext h4 {
-    margin: 0;          
-    font-size: 17px;     
-    color: #ddd;         
+    margin: 0;
+    font-size: 17px;
+    color: #ddd;
 }
 
-/* ===================== BANNER ===================== */
+nav a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s;
+    height: auto;
+    font-size: 20px;
+    max-width: 100px;
+}
 
-.banner{
-    display:flex;
+nav a:hover {
+    color: #ffcc00;
+}
+
+.banner {
+    display: flex;
     background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%), url("../assets/banner.jpg");
-    min-height:400px;
+    min-height: 400px;
     background-attachment: fixed;
     background-position: center;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
-    width:100%;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    text-shadow:2px 2px 4px #000000;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
     font-size: 40px;
-    margin:0;
+    margin: 0;
 }
 
-/* ===================== SECTION ===================== */
-
-section{
-    display:flex;
-    gap:20px;
-    padding:20px;
-    justify-content:space-between;
+section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
 }
 
-/* ===================== DESC ===================== */
-
-.desc{
-    display:flex;
-    margin-left:30px;
-    margin-top:20px;
+.desc {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 20px;
     flex-direction: column;
-    color:#000000;
+    color: #000000;
 }
-.desc h1{
-    font-size:42px;
-    max-width:475px;
+
+.desc h1 {
+    font-size: 42px;
+    max-width: 475px;
 }
-.desc h1::after{
-    content:"";
-    display:block;
-    width:100px;
-    height:5px;
+
+.desc h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
     border-top: 3px solid brown;
     border-bottom: 3px solid brown;
-    margin-top:20px;
-}
-.desc h3{
-    font-weight:normal;
-    max-width:430px;
+    margin-top: 20px;
 }
 
-/* ===================== COLLAGE ===================== */
-
-.collage{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    margin-right:50px;
-}
-.collage img{
-    width:200px;
-    height:130px;
-    margin:10px 20px 10px 10px;
-    border-radius:10%;
+.desc h3 {
+    font-weight: normal;
+    max-width: 430px;
 }
 
-/* ===================== FOUNDER ===================== */
+.collage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 50px;
+}
 
-.founder{
-    display:flex;
-    padding:20px;
+.collage img {
+    width: 200px;
+    height: 130px;
+    margin: 10px 20px 10px 10px;
+    border-radius: 10%;
+}
+
+.founder {
+    display: flex;
+    height: auto;
+    padding: 20px 20px 20px 20px;
     background-image: radial-gradient(circle at center, rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("../assets/banner.jpg");
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.founderlist{
-    display:flex;
-    flex-direction:row;
-    gap:30px;
+
+.founderlist {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
 }
-.founderbox{
-    text-align:center;
-    padding:20px;
+
+.founderbox {
+    height: auto;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    flex-direction: column;
     max-width: 200px;
-    color:black;
-    font-family:'Trebuchet MS';
-}
-.founderbox img{
-    width:200px;
-    height:250px;
-    border-radius:20px;
-}
-.namebox{
-    background-color:white;
-    border-radius:10px;
-    padding:5px 10px;
-    width:180px;
+    color: black;
+    font-family: 'Trebuchet MS';
 }
 
-/* ===================== TIMELINE ===================== */
+.founderbox img {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+}
 
-.timeline{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+.namebox {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    color: black;
+    width: 180px;
+    height: auto;
+    align-items: center;
 }
-.timeline_line{
-    display:flex;
-    flex-direction:row;
-    padding: 20px 50px;
-    justify-content:center;
-    position:relative;
+
+.timeline {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
+
+.timeline h1 {
+    font-weight: normal;
+}
+
+.timeline h4 {
+    margin-top: -25px;
+}
+
+.timeline_line {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 20px 50px 20px 50px;
+    justify-content: center;
+    position: relative;
+}
+
 .timeline_line::before {
-    content:"";
-    position:absolute;
+    content: "";
+    position: absolute;
     left: 0;
     right: 0;
-    top:20%;
+    top: 20%;
     height: 3px;
+    width: 100%;
     background: black;
-    z-index:-1;
+    pointer-events: none;
+    z-index: -1;
 }
-.step{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    width:200px;
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
 }
-.point{
-    width:12px;
-    height:12px;
+
+.step h3 {
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.point {
+    width: 12px;
+    height: 12px;
     background-color: white;
     border: 4px solid black;
-    border-radius:50%;
-    cursor:pointer;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
 }
-.point.active{
-    background-color:yellow;
-    animation:pulse 0.5s ease-in-out;
+
+.point.active {
+    background-color: yellow;
+    animation: pulse 0.5s ease-in-out;
 }
-.timeline_box{
-    background-color:bisque;
-    border-radius:20px;
-    padding: 30px;
+
+.timeline_box {
+    display: flex;
+    background-color: bisque;
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 30px 30px 30px 30px;
     margin: -40px 0 50px 0;
     max-width: 875px;
 }
-.timeline_title{
-    font-weight:bold;
-    font-size:30px;
-}
-.timeline_desc{
-    font-size:20px;
+
+.timeline_title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
-/* ===================== VISI MISI ===================== */
-
-.visi{
-    display:flex;
-    padding:20px 50px;
-    gap:30px;
+.timeline_desc {
+    font-size: 20px;
 }
+
+.visi {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: black;
+    flex-direction: row;
+    padding: 20px 50px 20px 50px;
+}
+
 .visi img {
-    width:500px;
-    height:300px;
-    border-radius:50px;
+    width: 500px;
+    height: 300px;
+    border-radius: 50px;
+    gap: 30px;
+    padding: 20px 20px 20px 20px;
 }
 
-/* ===================== FOOTER ===================== */
+.visi h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-footer{
+.visi ol {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.visi h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.visi h3 {
+    font-size: 20px;
+    font-weight: normal;
+    max-width: 1000px;
+}
+
+footer {
+    display: flex;
+    max-width: 100%;
+    height: auto;
     background-color: #545454;
-    padding:10px;
-    color:white;
-    display:flex;
-    flex-direction:column;
-}
-.footertext{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-weight:bold;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    text-align: flex-start;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
 }
 
-/* ============================================================= */
-/* =====================  FORM TIKET (NEW)  ===================== */
-/* ============================================================= */
-
-/* Judul */
-.tiket-title {
-    text-align:center;
-    margin-top:40px;
+.kontak {
+    display: flex;
+    align-items: bottom;
+    flex-direction: column;
 }
 
-/* Container Besar */
-.tiket-container {
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin:40px auto;
-    width:90%;
+.footertext {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
-/* Card Form */
-.tiket-box {
-    width:45%;
-    background:#FFFDF7;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+.footertext img {
+    width: 30px;
+    height: 30px;
 }
 
-/* Input Form */
-.tiket-box input,
-.tiket-box select {
-    width:100%;
-    padding:10px;
-    margin:6px 0 18px;
-    border-radius:8px;
-    border:1px solid #bbb;
+.layanan {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    justify-content: center;
 }
 
-/* Radio Group */
-.tiket-radio{
-    display:flex;
-    gap:20px;
+.layanan h1::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 5px;
+    border-top: 3px solid brown;
+    border-bottom: 3px solid brown;
+    margin-top: 20px;
+    align-items: center;
 }
 
-/* Harga Box */
-.tiket-harga{
-    background:#3D3D3D;
-    color:white;
-    padding:15px;
-    border-radius:10px;
-    font-size:14px;
+.line {
+    width: 100%;
+    height: 1px;
+    border: 3px solid black;
+    margin: 20px 0 20px 0;
 }
 
-/* Tombol */
-.tiket-submit {
-    display:block;
-    margin:20px auto;
-    padding:15px 40px;
-    background:#5cb85c;
-    border:none;
-    color:white;
-    font-size:18px;
-    border-radius:8px;
-    cursor:pointer;
-}
-.tiket-submit:hover {
-    background:#4cae4c;
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* Responsif */
-@media (max-width:900px){
-    .tiket-container{
-        flex-direction:column;
-        align-items:center;
-    }
-    .tiket-box{
-        width:100%;
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 45%;
+    background: #FFFDF7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.radio-group {
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.img-box {
+    width: 100%;
+    background: #d8f1ff;
+    height: 150px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.harga {
+    background: #3D3D3D;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #3e9e45;
+}
+
+@media (max-width: 900px) {
+    .box {
+        width: 100%;
+        margin-top: 20px;
     }
 }
