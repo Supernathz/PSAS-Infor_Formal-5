@@ -1,106 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pemesanan Tiket PT Monyet Terbang</title>
-<link rel="stylesheet" href="/css/tiket.css">
-<script src="/js/tiket.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animation.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
-<h1 class="judul">PEMESANAN TIKET PT. MONYET TERBANG</h1>
-
-<div class="form-container">
-
-    <!-- KIRI -->
-    <div class="box">
-        <h2>Registrasi Pengguna MT Ferry</h2>
-
-        <label>Email</label>
-        <input type="email">
-
-        <label>Nomor Identitas</label>
-        <input type="text">
-
-        <label>Nama Lengkap</label>
-        <input type="text">
-
-        <div class="radio-group">
-            <label><input type="radio" name="jk"> Laki - Laki</label>
-            <label><input type="radio" name="jk"> Perempuan</label>
-        </div>
-
-        <label>Alamat</label>
-        <input type="text">
-
-        <label>Kota/Kab.</label>
-        <input type="text">
-
-        <label>HP</label>
-        <input type="number">
-
-        <label>Password</label>
-        <input type="password">
-
-        <label>Konfirmasi Password</label>
-        <input type="password">
-
-        <label>Alat Pembayaran</label>
-        <select>
-            <option>Pilih Metode</option>
-            <option>Transfer Bank</option>
-            <option>E-Wallet</option>
-            <option>Kartu Kredit</option>
-        </select>
-
-        <div class="harga">
-            <p><b>Semua Kapal Pesiar PT. Monyet Terbang</b></p>
-            <p>Economy : Rp.15.000.000 (Dewasa)</p>
-            <p>Business : Rp.25.000.000 (Dewasa)</p>
-            <p>First Class : Rp.50.000.000 (Dewasa)</p>
-        </div>
-    </div>
-
-    <!-- KANAN -->
-    <div class="box">
-        <h2>Pesan Tiket Kapal</h2>
-
-        <label>Jenis Tiket</label>
-        <select id="jenisTiket">
-            <option value="">Pilih Jenis</option>
-            <option value="penumpang">Penumpang</option>
-            <option value="kargo">Kargo</option>
-        </select>
-
-        <label>Pilih Kapal</label>
-        <select id="kapal">
-            <option value="">-- Pilih Jenis Tiket Dulu --</option>
-        </select>
-
-        <label>Pelabuhan Awal</label>
-        <input type="text" id="asal" readonly>
-
-        <label>Pelabuhan Berhenti #1</label>
-        <input type="text" id="stop1" readonly>
-
-        <label>Pelabuhan Berhenti #2</label>
-        <input type="text" id="stop2" readonly>
-
-        <label>Pelabuhan Akhir</label>
-        <input type="text" id="tujuan" readonly>
-
-        <div class="harga">
-            <p><b>Harga Tiket Anak (&lt;10)</b></p>
-            <p>Economy : Rp.10.000.000</p>
-            <p>Business : Rp.15.000.000</p>
-            <p>First Class : Rp.30.000.000</p>
-        </div>
-    </div>
-
-</div>
-
-<button class="submit-btn">PESAN SEKARANG</button>
-
+<header>
+  <nav><img src ="../assets/logo.png" alt="Logo" class="logo">
+    <div class="navtext">
+      <h2>PT Monyet Terbang</h2>
+      <h4>Armada Pelayaran Tepeng</h4>
+    </div></nav>
+  <nav>
+    <a href="../index.html">Beranda</a>
+    <a href="layanan.html">Layanan</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="infojadwal.html">Informasi Jadwal</a>
+    <a href="tiket.html">Pemesanan Tiket</a>
+    <a href="#footer">Hubungi Kami</a>
+  </nav>
+</header>
+<main>
+<div class="banner"><h1>Beranda</h1></div>
+<br><br><br><br>
+</main>
+<footer id="footer">
+  <div class=kontak>
+  <h3>Hubungi kami di:</h3>
+    <div class="footertext"><img src="whatsapp.png">081181945</div>
+    <div class="footertext"><img src="instagram.png">@PTmonyet_terbang</div>
+  </div>
+  <p>© 2025 PT Monyet Terbang. All rights reserved.</p>
+</footer>
 </body>
 </html>
