@@ -318,3 +318,90 @@ footer{
     height:1px;
     border:3px solid black;
     margin:20px 0 20px 0;
+
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        width: 45%;
+        background: #FFFDF7;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    label {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .radio-group {
+        margin-top: 10px;
+    }
+
+    .radio-group label {
+        display: inline-block;
+        margin-right: 15px;
+        font-weight: normal;
+    }
+
+    .img-box {
+        width: 100%;
+        background: #d8f1ff;
+        height: 150px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .harga {
+        background: #3D3D3D;
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: #4CAF50;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background: #3e9e45;
+    }
+
+    @media (max-width: 900px) {
+        .box {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
