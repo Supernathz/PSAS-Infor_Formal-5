@@ -1,26 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pemesanan Tiket PT Monyet Terbang</title>
-<link rel="stylesheet" href="/css/tiket.css">
-<script src="/js/tiket.js" defer></script>
+<title>Pemesanan Tiket PT. Monyet Terbang</title>
+
+<style>
+    body {
+        font-family: Georgia, serif;
+        background: #FAF5E4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        width: 45%;
+        background: #FFFDF7;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    label {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .radio-group {
+        margin-top: 10px;
+    }
+
+    .radio-group label {
+        display: inline-block;
+        margin-right: 15px;
+        font-weight: normal;
+    }
+
+    .img-box {
+        width: 100%;
+        background: #d8f1ff;
+        height: 150px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .harga {
+        background: #3D3D3D;
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: #4CAF50;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background: #3e9e45;
+    }
+
+    @media (max-width: 900px) {
+        .box {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+</style>
 </head>
+
 <body>
 
-<h1 class="judul">PEMESANAN TIKET PT. MONYET TERBANG</h1>
+<h2>PEMESANAN TIKET PT. MONYET TERBANG</h2>
 
-<div class="form-container">
+<div class="container">
 
     <!-- KIRI -->
     <div class="box">
-        <h2>Registrasi Pengguna MT Ferry</h2>
+        <h3>Registrasi Pengguna MT Ferry</h3>
 
         <label>Email</label>
         <input type="email">
 
-        <label>Nomor Identitas</label>
+        <label>Nomor Identitas (KTP/SIM/Passport)</label>
         <input type="text">
 
         <label>Nama Lengkap</label>
@@ -55,46 +150,68 @@
         </select>
 
         <div class="harga">
-            <p><b>Semua Kapal Pesiar PT. Monyet Terbang</b></p>
-            <p>Economy : Rp.15.000.000 (Dewasa)</p>
-            <p>Business : Rp.25.000.000 (Dewasa)</p>
-            <p>First Class : Rp.50.000.000 (Dewasa)</p>
+            <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
+            <p>Economy : Rp.15,000,000,00 (Dewasa)</p>
+            <p>Business : Rp.25,000,000,00 (Dewasa)</p>
+            <p>First Class : Rp.50,000,000,00 (Dewasa)</p>
         </div>
     </div>
 
     <!-- KANAN -->
     <div class="box">
-        <h2>Pesan Tiket Kapal</h2>
+        <h3>Pesan Tiket Kapal</h3>
 
         <label>Jenis Tiket</label>
-        <select id="jenisTiket">
-            <option value="">Pilih Jenis</option>
-            <option value="penumpang">Penumpang</option>
-            <option value="kargo">Kargo</option>
+        <select>
+            <option>Pilih Jenis</option>
+            <option>Economy</option>
+            <option>Business</option>
+            <option>First Class</option>
         </select>
 
-        <label>Pilih Kapal</label>
-        <select id="kapal">
-            <option value="">-- Pilih Jenis Tiket Dulu --</option>
+        <label>Pelabuhan Asal</label>
+        <select>
+            <option>Pilih Pelabuhan</option>
+            <option>Jakarta</option>
+            <option>Surabaya</option>
+            <option>Bali</option>
         </select>
 
-        <label>Pelabuhan Awal</label>
-        <input type="text" id="asal" readonly>
+        <label>Pelabuhan Tujuan</label>
+        <select>
+            <option>Pilih Tujuan</option>
+            <option>Makassar</option>
+            <option>Lombok</option>
+            <option>Batam</option>
+        </select>
 
-        <label>Pelabuhan Berhenti #1</label>
-        <input type="text" id="stop1" readonly>
+        <label>Balita / Dewasa</label>
+        <select>
+            <option>Dewasa</option>
+            <option>Balita</option>
+        </select>
 
-        <label>Pelabuhan Berhenti #2</label>
-        <input type="text" id="stop2" readonly>
+        <label>Berhenti Pelabuhan #1</label>
+        <input type="text" placeholder="#ISI OTOMATIS">
 
-        <label>Pelabuhan Akhir</label>
-        <input type="text" id="tujuan" readonly>
+        <label>Berhenti Pelabuhan #2</label>
+        <input type="text" placeholder="#ISI OTOMATIS">
+
+        <div class="img-box"></div>
+
+        <label>Transfer</label>
+        <select>
+            <option>Pilih Bank</option>
+            <option>BCA</option>
+            <option>Mandaliri</option>
+            <option>BRI</option>
+        </select>
 
         <div class="harga">
-            <p><b>Harga Tiket Anak (&lt;10)</b></p>
-            <p>Economy : Rp.10.000.000</p>
-            <p>Business : Rp.15.000.000</p>
-            <p>First Class : Rp.30.000.000</p>
+            <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
+            <p>Economy : Rp.10,000,000,00 (Anak &lt; 10)</p>
+            <p>Business : Rp.15,000,000,00 (Anak &lt; 10)</p>
+            <p>First Class : Rp.30,000,000,00 (Anak &lt; 10)</p>
         </div>
     </div>
 
