@@ -298,8 +298,12 @@ section {
 .visi h3 {
     font-size: 20px;
     font-weight: normal;
-    max-width: 1000px;
+    max-width: 200px;
 }
+.visi h4{
+    font-size:20px;
+    font-weight:normal;
+    max-width:200px;
 
 footer {
     display: flex;
