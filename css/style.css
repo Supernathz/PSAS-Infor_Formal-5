@@ -489,3 +489,17 @@ input, select {
         width:320px;
         padding-left:15%;
     }
+    td{
+        border:none;
+    }
+  .kantor{
+    margin: 40px;margin-top:20px;background-color: white;box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  .kantor th, .kantor td {
+    border: 1px solid black;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  th {
+    font-weight: bold;
+  }
