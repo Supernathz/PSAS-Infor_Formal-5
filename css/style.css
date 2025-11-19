@@ -218,6 +218,34 @@ section{
 .timeline_desc{
     font-size:20px;
 }
+.visi{
+    align-items:center;
+    justify-content:center;
+    display:flex;
+    color:black;
+    flex-direction:column;
+}
+.visi img {
+    width:500px;
+    height:300px;
+    border-radius:50px;
+    gap:30px;
+    padding:20px 20px 20px 20px;
+}
+.visi h1 {
+    font-size:30px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+.visi ol {
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:3px;
+}
+.visi h3 {
+    font-size:20px;
+}
+
 footer{
     display:flex;
     max-width:100%;
@@ -228,6 +256,7 @@ footer{
     text-align:flex-start;
     flex-direction: column;
     margin:0;
+    justify-content:center;
 }
 .kontak{
     display:flex;
@@ -246,6 +275,10 @@ footer{
     width:30px;
     height:30px;
 }
+
+
+
+
 .layanan{
     display:flex;
     flex-direction:column;
