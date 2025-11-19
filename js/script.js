@@ -1,5 +1,3 @@
-/* ========== TIMELINE SCRIPT ========== */
-
 const points = document.querySelectorAll('.point');
 const title = document.getElementById('title');
 const desc = document.getElementById('desc');
@@ -41,60 +39,4 @@ points.forEach(point => {
             desc.classList.remove("fade");
         }, 500);
     });
-});
-
-
-/* ========== PEMESANAN TIKET SCRIPT ========== */
-
-const jenisTiket = document.getElementById("jenisTiket");
-const kapal = document.getElementById("kapal");
-const asal = document.getElementById("asal");
-const stop1 = document.getElementById("stop1");
-const stop2 = document.getElementById("stop2");
-const tujuan = document.getElementById("tujuan");
-
-const dataKapal = {
-  penumpang: {
-    "Icon of the Seas": ["Balikpapan", "Makassar", "-", "Kalimantan Selatan"],
-    "Star Of The Seas": ["NTB", "Bali", "-", "Semarang"],
-    "Utopia Of The Seas": ["Pontianak", "Bali", "-", "Lombok"]
-  },
-
-  kargo: {
-    "MSC Irina": ["Pontianak", "Kalsel", "Balikpapan", "Makassar"]
-  }
-};
-
-jenisTiket.addEventListener("change", () => {
-  kapal.innerHTML = `<option value="">Pilih Kapal</option>`;
-
-  if (jenisTiket.value === "") return;
-
-  const list = dataKapal[jenisTiket.value];
-
-  Object.keys(list).forEach(k => {
-    const option = document.createElement("option");
-    option.value = k;
-    option.textContent = k;
-    kapal.appendChild(option);
-  });
-
-  asal.value = "";
-  stop1.value = "";
-  stop2.value = "";
-  tujuan.value = "";
-});
-
-kapal.addEventListener("change", () => {
-  if (!kapal.value) return;
-
-  const rute = dataKapal[jenisTiket.value][kapal.value];
-
-  asal.value = rute[0];
-  stop1.value = rute[1];
-  stop2.value = rute[2] === "-" ? "" : rute[2];
-  tujuan.value = rute[3];
-
-  // hide kolom stop2 jika tidak ada
-  stop2.parentElement.style.display = rute[2] === "-" ? "none" : "block";
 });
