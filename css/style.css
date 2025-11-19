@@ -4,9 +4,10 @@ html {
 }
 
 body {
-    background-color: rgb(233, 230, 224);
-    font-family: 'Times New Roman', Times, serif;
+    background-color: #FAF5E4;
+    font-family: Georgia, serif;
     margin: 0;
+    
 }
 
 header {
@@ -157,7 +158,6 @@ section {
     flex-direction: column;
     max-width: 300px;
     color: black;
-    font-family: 'Trebuchet MS';
 }
 
 .founderbox img {
@@ -304,6 +304,7 @@ section {
     font-size:20px;
     font-weight:normal;
     max-width:200px;
+}
 
 footer {
     display: flex;
@@ -374,6 +375,7 @@ footer {
 }
 
 /*tiket*/
+
 h2 {
     text-align: center;
     margin-top: 30px;
@@ -403,7 +405,7 @@ label {
 }
 
 input, select {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     margin-top: 4px;
     border: 1px solid #ccc;
@@ -438,9 +440,10 @@ input, select {
 }
 
 .submit-btn {
-    width: 100%;
+    display:flex;
+    width: calc(100%-100px);
     padding: 12px;
-    margin-top: 20px;
+    margin: 20px 50px;
     background: #4CAF50;
     color: white;
     font-size: 16px;
@@ -448,10 +451,16 @@ input, select {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    text-decoration: none;
+    justify-content:center;
 }
 
 .submit-btn:hover {
     background: #3e9e45;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 900px) {
