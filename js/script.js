@@ -36,59 +36,5 @@ points.forEach(point => {
       setTimeout(() => {
         desc.classList.remove("fade");
       }, 500);
-        const jenisTiket = document.getElementById("jenisTiket");
-const kapal = document.getElementById("kapal");
-
-const asal = document.getElementById("asal");
-const stop1 = document.getElementById("stop1");
-const stop2 = document.getElementById("stop2");
-const tujuan = document.getElementById("tujuan");
-
-// DATA RUTE
-const rutePenumpang = {
-    "Icon of the Seas": ["Balikpapan", "Makassar", "", "Kalimantan Selatan"],
-    "Star of the Seas": ["NTB", "Bali", "", "Semarang"],
-    "Utopia of the Seas": ["Pontianak", "Bali", "", "Lombok"]
-};
-
-const ruteKargo = {
-    "MSC Irina": ["Pontianak", "Kalsel", "Balikpapan", "Makassar"]
-};
-
-// JENIS TIKET DIPILIH
-jenisTiket.addEventListener("change", () => {
-    kapal.innerHTML = "";
-
-    if (jenisTiket.value === "penumpang") {
-        kapal.innerHTML = `
-            <option value="">Pilih Kapal</option>
-            <option>Icon of the Seas</option>
-            <option>Star of the Seas</option>
-            <option>Utopia of the Seas</option>
-        `;
-    }
-
-    if (jenisTiket.value === "kargo") {
-        kapal.innerHTML = `
-            <option value="">Pilih Kapal</option>
-            <option>MSC Irina</option>
-        `;
-    }
-});
-
-// KAPAL DIPILIH → ISI RUTE OTOMATIS
-kapal.addEventListener("change", () => {
-    let route = [];
-
-    if (jenisTiket.value === "penumpang") {
-        route = rutePenumpang[kapal.value];
-    } else {
-        route = ruteKargo[kapal.value];
-    }
-
-    asal.value = route[0] || "";
-    stop1.value = route[1] || "";
-    stop2.value = route[2] || "";
-    tujuan.value = route[3] || "";
     });
   });
