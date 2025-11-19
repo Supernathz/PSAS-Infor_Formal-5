@@ -27,18 +27,31 @@
 <main>
 <div class="banner"><h1>Beranda</h1></div>
 <br><br><br><br>
-  <h2>PEMESANAN TIKET PT. MONYET TERBANG</h2>
 
-<div class="container">
+</main>
+<footer id="footer"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pemesanan Tiket PT Monyet Terbang</title>
+<link rel="stylesheet" href="/css/tiket.css">
+<script src="/js/tiket.js" defer></script>
+</head>
+<body>
+
+<h1 class="judul">PEMESANAN TIKET PT. MONYET TERBANG</h1>
+
+<div class="form-container">
 
     <!-- KIRI -->
     <div class="box">
-        <h3>Registrasi Pengguna MT Ferry</h3>
+        <h2>Registrasi Pengguna MT Ferry</h2>
 
         <label>Email</label>
         <input type="email">
 
-        <label>Nomor Identitas (KTP/SIM/Passport)</label>
+        <label>Nomor Identitas</label>
         <input type="text">
 
         <label>Nama Lengkap</label>
@@ -73,76 +86,52 @@
         </select>
 
         <div class="harga">
-            <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
-            <p>Economy : Rp.15,000,000,00 (Dewasa)</p>
-            <p>Business : Rp.25,000,000,00 (Dewasa)</p>
-            <p>First Class : Rp.50,000,000,00 (Dewasa)</p>
+            <p><b>Semua Kapal Pesiar PT. Monyet Terbang</b></p>
+            <p>Economy : Rp.15.000.000 (Dewasa)</p>
+            <p>Business : Rp.25.000.000 (Dewasa)</p>
+            <p>First Class : Rp.50.000.000 (Dewasa)</p>
         </div>
     </div>
 
     <!-- KANAN -->
     <div class="box">
-        <h3>Pesan Tiket Kapal</h3>
+        <h2>Pesan Tiket Kapal</h2>
 
         <label>Jenis Tiket</label>
-        <select>
-            <option>Pilih Jenis</option>
-            <option>Economy</option>
-            <option>Business</option>
-            <option>First Class</option>
+        <select id="jenisTiket">
+            <option value="">Pilih Jenis</option>
+            <option value="penumpang">Penumpang</option>
+            <option value="kargo">Kargo</option>
         </select>
 
-        <label>Pelabuhan Asal</label>
-        <select>
-            <option>Pilih Pelabuhan</option>
-            <option>Jakarta</option>
-            <option>Surabaya</option>
-            <option>Bali</option>
+        <label>Pilih Kapal</label>
+        <select id="kapal">
+            <option value="">-- Pilih Jenis Tiket Dulu --</option>
         </select>
 
-        <label>Pelabuhan Tujuan</label>
-        <select>
-            <option>Pilih Tujuan</option>
-            <option>Makassar</option>
-            <option>Lombok</option>
-            <option>Batam</option>
-        </select>
+        <label>Pelabuhan Awal</label>
+        <input type="text" id="asal" readonly>
 
-        <label>Balita / Dewasa</label>
-        <select>
-            <option>Dewasa</option>
-            <option>Balita</option>
-        </select>
+        <label>Pelabuhan Berhenti #1</label>
+        <input type="text" id="stop1" readonly>
 
-        <label>Berhenti Pelabuhan #1</label>
-        <input type="text" placeholder="#ISI OTOMATIS">
+        <label>Pelabuhan Berhenti #2</label>
+        <input type="text" id="stop2" readonly>
 
-        <label>Berhenti Pelabuhan #2</label>
-        <input type="text" placeholder="#ISI OTOMATIS">
-
-        <div class="img-box"></div>
-
-        <label>Transfer</label>
-        <select>
-            <option>Pilih Bank</option>
-            <option>BCA</option>
-            <option>Mandaliri</option>
-            <option>BRI</option>
-        </select>
+        <label>Pelabuhan Akhir</label>
+        <input type="text" id="tujuan" readonly>
 
         <div class="harga">
-            <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
-            <p>Economy : Rp.10,000,000,00 (Anak &lt; 10)</p>
-            <p>Business : Rp.15,000,000,00 (Anak &lt; 10)</p>
-            <p>First Class : Rp.30,000,000,00 (Anak &lt; 10)</p>
+            <p><b>Harga Tiket Anak (&lt;10)</b></p>
+            <p>Economy : Rp.10.000.000</p>
+            <p>Business : Rp.15.000.000</p>
+            <p>First Class : Rp.30.000.000</p>
         </div>
     </div>
 
 </div>
 
 <button class="submit-btn">PESAN SEKARANG</button>
-</main>
-<footer id="footer">
   <div class=kontak>
   <h3>Hubungi kami di:</h3>
     <div class="footertext"><img src="whatsapp.png">081181945</div>
