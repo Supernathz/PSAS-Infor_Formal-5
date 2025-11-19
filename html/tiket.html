@@ -79,7 +79,7 @@
     .submit-btn {
         width: 100%;
         padding: 12px;
-        margin-top: 20px;
+        margin: 20px 50px;
         background: #4CAF50;
         color: white;
         font-size: 16px;
@@ -91,6 +91,10 @@
 
     .submit-btn:hover {
         background: #3e9e45;
+    }
+
+    .hidden {
+        display: none;
     }
 
     @media (max-width: 900px) {
@@ -113,36 +117,36 @@
         <h3>Registrasi Pengguna MT Ferry</h3>
 
         <label>Email</label>
-        <input type="email">
+        <input type="email" id="email">
 
         <label>Nomor Identitas (KTP/SIM/Passport)</label>
-        <input type="text">
+        <input type="text" id="identitas">
 
         <label>Nama Lengkap</label>
-        <input type="text">
+        <input type="text" id="nama">
 
         <div class="radio-group">
-            <label><input type="radio" name="jk"> Laki - Laki</label>
-            <label><input type="radio" name="jk"> Perempuan</label>
+            <label><input type="radio" name="jk" value="Laki-laki"> Laki - Laki</label>
+            <label><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
         </div>
 
         <label>Alamat</label>
-        <input type="text">
+        <input type="text" id="alamat">
 
         <label>Kota/Kab.</label>
-        <input type="text">
+        <input type="text" id="kota">
 
         <label>HP</label>
-        <input type="number">
+        <input type="number" id="hp">
 
         <label>Password</label>
-        <input type="password">
+        <input type="password" id="password">
 
         <label>Konfirmasi Password</label>
-        <input type="password">
+        <input type="password" id="konfirmasi">
 
         <label>Alat Pembayaran</label>
-        <select>
+        <select id="pembayaran">
             <option>Pilih Metode</option>
             <option>Transfer Bank</option>
             <option>E-Wallet</option>
@@ -162,52 +166,59 @@
         <h3>Pesan Tiket Kapal</h3>
 
         <label>Jenis Tiket</label>
-        <select>
+        <select id="jenisTiket">
             <option>Pilih Jenis</option>
-            <option>Economy</option>
-            <option>Business</option>
-            <option>First Class</option>
+            <option value="penumpang">Penumpang</option>
+            <option value="kargo">Kargo</option>
         </select>
+
+        <div id="kapalSection" class="hidden">
+            <label>Kapal</label>
+            <select id="kapal">
+                <option>Pilih Kapal</option>
+                <option value="icon">Icon of the Seas</option>
+                <option value="star">Star Of The Seas</option>
+                <option value="utopia">Utopia Of The Seas</option>
+            </select>
+        </div>
 
         <label>Pelabuhan Asal</label>
-        <select>
-            <option>Pilih Pelabuhan</option>
-            <option>Jakarta</option>
-            <option>Surabaya</option>
-            <option>Bali</option>
-        </select>
+        <input type="text" id="asal" readonly>
+
+        <label>Berhenti Pelabuhan #1</label>
+        <input type="text" id="berhenti1" readonly>
+
+        <label id="berhenti2Label" class="hidden">Berhenti Pelabuhan #2</label>
+        <input type="text" id="berhenti2" class="hidden" readonly>
 
         <label>Pelabuhan Tujuan</label>
-        <select>
-            <option>Pilih Tujuan</option>
-            <option>Makassar</option>
-            <option>Lombok</option>
-            <option>Batam</option>
+        <input type="text" id="tujuan" readonly>
+
+        <label>Jenis Tiket (Kelas)</label>
+        <select id="kelas">
+            <option>Pilih Kelas</option>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First Class</option>
         </select>
 
         <label>Balita / Dewasa</label>
-        <select>
-            <option>Dewasa</option>
-            <option>Balita</option>
+        <select id="usia">
+            <option value="dewasa">Dewasa</option>
+            <option value="balita">Balita</option>
         </select>
-
-        <label>Berhenti Pelabuhan #1</label>
-        <input type="text" placeholder="#ISI OTOMATIS">
-
-        <label>Berhenti Pelabuhan #2</label>
-        <input type="text" placeholder="#ISI OTOMATIS">
 
         <div class="img-box"></div>
 
         <label>Transfer</label>
-        <select>
+        <select id="transfer">
             <option>Pilih Bank</option>
             <option>BCA</option>
-            <option>Mandaliri</option>
+            <option>Mandiri</option>
             <option>BRI</option>
         </select>
 
-        <div class="harga">
+        <div class="harga" id="hargaDinamis">
             <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
             <p>Economy : Rp.10,000,000,00 (Anak &lt; 10)</p>
             <p>Business : Rp.15,000,000,00 (Anak &lt; 10)</p>
@@ -218,6 +229,97 @@
 </div>
 
 <button class="submit-btn">PESAN SEKARANG</button>
+
+<script>
+    const jenisTiket = document.getElementById('jenisTiket');
+    const kapalSection = document.getElementById('kapalSection');
+    const kapal = document.getElementById('kapal');
+    const asal = document.getElementById('asal');
+    const berhenti1 = document.getElementById('berhenti1');
+    const berhenti2 = document.getElementById('berhenti2');
+    const berhenti2Label = document.getElementById('berhenti2Label');
+    const tujuan = document.getElementById('tujuan');
+    const kelas = document.getElementById('kelas');
+    const usia = document.getElementById('usia');
+    const hargaDinamis = document.getElementById('hargaDinamis');
+
+    // Data jalur
+    const jalurPenumpang = {
+        icon: { asal: 'Balikpapan', berhenti1: 'Makassar', tujuan: 'Kalimantan Selatan' },
+        star: { asal: 'NTB', berhenti1: 'Bali', tujuan: 'Semarang' },
+        utopia: { asal: 'Pontianak', berhenti1: 'Bali', tujuan: 'Lombok' }
+    };
+
+    const jalurKargo = { asal: 'Pontianak', berhenti1: 'Kalsel', berhenti2: 'Balikpapan', tujuan: 'Makassar' };
+
+    // Harga
+    const hargaDewasa = { economy: 15000000, business: 25000000, first: 50000000 };
+    const hargaAnak = { economy: 10000000, business: 15000000, first: 30000000 };
+
+    jenisTiket.addEventListener('change', function() {
+        if (this.value === 'penumpang') {
+            kapalSection.classList.remove('hidden');
+            berhenti2.classList.add('hidden');
+            berhenti2Label.classList.add('hidden');
+            kapal.value = 'Pilih Kapal';
+            clearFields();
+        } else if (this.value === 'kargo') {
+            kapalSection.classList.add('hidden');
+            berhenti2.classList.remove('hidden');
+            berhenti2Label.classList.remove('hidden');
+            setKargoFields();
+        } else {
+            kapalSection.classList.add('hidden');
+            berhenti2.classList.add('hidden');
+            berhenti2Label.classList.add('hidden');
+            clearFields();
+        }
+    });
+
+    kapal.addEventListener('change', function() {
+        if (jalurPenumpang[this.value]) {
+            const data = jalurPenumpang[this.value];
+            asal.value = data.asal;
+            berhenti1.value = data.berhenti1;
+            tujuan.value = data.tujuan;
+            berhenti2.value = '';
+        } else {
+            clearFields();
+        }
+    });
+
+    function setKargoFields() {
+        asal.value = jalurKargo.asal;
+        berhenti1.value = jalurKargo.berhenti1;
+        berhenti2.value = jalurKargo.berhenti2;
+        tujuan.value = jalurKargo.tujuan;
+    }
+
+    function clearFields() {
+        asal.value = '';
+        berhenti1.value = '';
+        berhenti2.value = '';
+        tujuan.value = '';
+    }
+
+    function updateHarga() {
+        const selectedKelas = kelas.value;
+        const selectedUsia = usia.value;
+        const harga = selectedUsia === 'dewasa' ? hargaDewasa[selectedKelas] : hargaAnak[selectedKelas];
+        if (harga) {
+            hargaDinamis.innerHTML = `
+                <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
+                <p>Economy : Rp.${hargaDewasa.economy.toLocaleString()},00 (${selectedUsia === 'dewasa' ? 'Dewasa' : 'Anak &lt; 10'})</p>
+                <p>Business : Rp.${hargaDewasa.business.toLocaleString()},00 (${selectedUsia === 'dewasa' ? 'Dewasa' : 'Anak &lt; 10'})</p>
+                <p>First Class : Rp.${hargaDewasa.first.toLocaleString()},00 (${selectedUsia === 'dewasa' ? 'Dewasa' : 'Anak &lt; 10'})</p>
+                <p><strong>Harga Terpilih: Rp.${harga.toLocaleString()},00</strong></p>
+            `;
+        }
+    }
+
+    kelas.addEventListener('change', updateHarga);
+    usia.addEventListener('change', updateHarga);
+</script>
 
 </body>
 </html>
