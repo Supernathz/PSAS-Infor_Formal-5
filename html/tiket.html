@@ -182,6 +182,57 @@
             </select>
         </div>
 
+        <label>Tanggal Keberangkatan</label>
+        <select id="tanggal">
+            <option>Pilih Tanggal</option>
+            <!-- Tanggal dari 18 November 2024 sampai 1 Januari 2025 -->
+            <option value="2024-11-18">18 November 2024</option>
+            <option value="2024-11-19">19 November 2024</option>
+            <option value="2024-11-20">20 November 2024</option>
+            <option value="2024-11-21">21 November 2024</option>
+            <option value="2024-11-22">22 November 2024</option>
+            <option value="2024-11-23">23 November 2024</option>
+            <option value="2024-11-24">24 November 2024</option>
+            <option value="2024-11-25">25 November 2024</option>
+            <option value="2024-11-26">26 November 2024</option>
+            <option value="2024-11-27">27 November 2024</option>
+            <option value="2024-11-28">28 November 2024</option>
+            <option value="2024-11-29">29 November 2024</option>
+            <option value="2024-11-30">30 November 2024</option>
+            <option value="2024-12-01">1 Desember 2024</option>
+            <option value="2024-12-02">2 Desember 2024</option>
+            <option value="2024-12-03">3 Desember 2024</option>
+            <option value="2024-12-04">4 Desember 2024</option>
+            <option value="2024-12-05">5 Desember 2024</option>
+            <option value="2024-12-06">6 Desember 2024</option>
+            <option value="2024-12-07">7 Desember 2024</option>
+            <option value="2024-12-08">8 Desember 2024</option>
+            <option value="2024-12-09">9 Desember 2024</option>
+            <option value="2024-12-10">10 Desember 2024</option>
+            <option value="2024-12-11">11 Desember 2024</option>
+            <option value="2024-12-12">12 Desember 2024</option>
+            <option value="2024-12-13">13 Desember 2024</option>
+            <option value="2024-12-14">14 Desember 2024</option>
+            <option value="2024-12-15">15 Desember 2024</option>
+            <option value="2024-12-16">16 Desember 2024</option>
+            <option value="2024-12-17">17 Desember 2024</option>
+            <option value="2024-12-18">18 Desember 2024</option>
+            <option value="2024-12-19">19 Desember 2024</option>
+            <option value="2024-12-20">20 Desember 2024</option>
+            <option value="2024-12-21">21 Desember 2024</option>
+            <option value="2024-12-22">22 Desember 2024</option>
+            <option value="2024-12-23">23 Desember 2024</option>
+            <option value="2024-12-24">24 Desember 2024</option>
+            <option value="2024-12-25">25 Desember 2024</option>
+            <option value="2024-12-26">26 Desember 2024</option>
+            <option value="2024-12-27">27 Desember 2024</option>
+            <option value="2024-12-28">28 Desember 2024</option>
+            <option value="2024-12-29">29 Desember 2024</option>
+            <option value="2024-12-30">30 Desember 2024</option>
+            <option value="2024-12-31">31 Desember 2024</option>
+            <option value="2025-01-01">1 Januari 2025</option>
+        </select>
+
         <label>Pelabuhan Asal</label>
         <input type="text" id="asal" readonly>
 
@@ -208,7 +259,15 @@
             <option value="balita">Balita</option>
         </select>
 
-        <div class="img-box"></div>
+        <div id="imgBox" class="img-box"></div>
+
+        <div id="hargaKargo" class="harga hidden">
+            <p>Pontianak - Kalsel - Balikpapan - Makassar</p>
+            <p>1 Kontainer : Rp.5,000,000,00</p>
+        </div>
+
+        <label id="kontainerLabel" class="hidden">Jumlah Kontainer</label>
+        <input type="number" id="kontainer" class="hidden" min="1" value="1">
 
         <label>Transfer</label>
         <select id="transfer">
@@ -242,6 +301,10 @@
     const kelas = document.getElementById('kelas');
     const usia = document.getElementById('usia');
     const hargaDinamis = document.getElementById('hargaDinamis');
+    const imgBox = document.getElementById('imgBox');
+    const hargaKargo = document.getElementById('hargaKargo');
+    const kontainerLabel = document.getElementById('kontainerLabel');
+    const kontainer = document.getElementById('kontainer');
 
     // Data jalur
     const jalurPenumpang = {
@@ -255,24 +318,40 @@
     // Harga
     const hargaDewasa = { economy: 15000000, business: 25000000, first: 50000000 };
     const hargaAnak = { economy: 10000000, business: 15000000, first: 30000000 };
+    const hargaKargoPerKontainer = 5000000;
 
     jenisTiket.addEventListener('change', function() {
         if (this.value === 'penumpang') {
             kapalSection.classList.remove('hidden');
             berhenti2.classList.add('hidden');
             berhenti2Label.classList.add('hidden');
+            imgBox.classList.remove('hidden');
+            hargaKargo.classList.add('hidden');
+            kontainerLabel.classList.add('hidden');
+            kontainer.classList.add('hidden');
             kapal.value = 'Pilih Kapal';
             clearFields();
+            updateHarga();
         } else if (this.value === 'kargo') {
             kapalSection.classList.add('hidden');
             berhenti2.classList.remove('hidden');
             berhenti2Label.classList.remove('hidden');
+            imgBox.classList.add('hidden');
+            hargaKargo.classList.remove('hidden');
+            kontainerLabel.classList.remove('hidden');
+            kontainer.classList.remove('hidden');
             setKargoFields();
+            updateHarga();
         } else {
             kapalSection.classList.add('hidden');
             berhenti2.classList.add('hidden');
             berhenti2Label.classList.add('hidden');
+            imgBox.classList.remove('hidden');
+            hargaKargo.classList.add('hidden');
+            kontainerLabel.classList.add('hidden');
+            kontainer.classList.add('hidden');
             clearFields();
+            updateHarga();
         }
     });
 
@@ -286,6 +365,7 @@
         } else {
             clearFields();
         }
+        updateHarga();
     });
 
     function setKargoFields() {
@@ -305,21 +385,25 @@
     function updateHarga() {
         const selectedKelas = kelas.value;
         const selectedUsia = usia.value;
-        const harga = selectedUsia === 'dewasa' ? hargaDewasa[selectedKelas] : hargaAnak[selectedKelas];
-        if (harga) {
+        const selectedJenis = jenisTiket.value;
+        const jumlahKontainer = parseInt(kontainer.value) || 1;
+
+        if (selectedJenis === 'kargo') {
+            const total = jumlahKontainer * hargaKargoPerKontainer;
+            hargaDinamis.innerHTML = `
+                <p>Pontianak - Kalsel - Balikpapan - Makassar</p>
+                <p>1 Kontainer : Rp.5,000,000,00</p>
+                <p>Jumlah Kontainer: ${jumlahKontainer}</p>
+                <p><strong>Total Harga: Rp.${total.toLocaleString()},00</strong></p>
+            `;
+        } else {
+            const hargaDewasaTampil = hargaDewasa[selectedKelas] || 0;
+            const hargaAnakTampil = hargaAnak[selectedKelas] || 0;
+            const hargaTerpilih = selectedUsia === 'dewasa' ? hargaDewasa[selectedKelas] : hargaAnak[selectedKelas];
             hargaDinamis.innerHTML = `
                 <p>Semua Kapal Pesiar PT. Monyet Terbang</p>
-                <p>Economy : Rp.${hargaDewasa.economy.toLocaleString()},00 (${selectedUsia === 'dewasa' ? 'Dewasa' : 'Anak &lt; 10'})</p>
-                <p>Business : Rp.${hargaDewasa.business.toLocaleString()},00 (${selectedUsia === 'dewasa' ? 'Dewasa' : 'Anak &lt; 10'})</p>
-                <p>First Class : Rp.${hargaDewasa.first.toLocaleString()},00 (${selectedUsia === 'dewasa' ? 'Dewasa' : 'Anak &lt; 10'})</p>
-                <p><strong>Harga Terpilih: Rp.${harga.toLocaleString()},00</strong></p>
-            `;
-        }
-    }
-
-    kelas.addEventListener('change', updateHarga);
-    usia.addEventListener('change', updateHarga);
-</script>
-
-</body>
-</html>
+                <p>Economy : Rp.${hargaAnak.economy.toLocaleString()},00 (Anak &lt; 10)</p>
+                <p>Business : Rp.${hargaAnak.business.toLocaleString()},00 (Anak &lt; 10)</p>
+                <p>First Class : Rp.${hargaAnak.first.toLocaleString()},00 (Anak &lt; 10)</p>
+                <p>Economy : Rp.${hargaDewasa.economy.toLocaleString()},00 (Dewasa)</p>
+                <p>Business : Rp.${hargaDewasa.business.toLocaleString()},00 (Dewasa)</p
