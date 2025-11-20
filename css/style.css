@@ -69,7 +69,6 @@ nav a:hover {
 
 .banner {
     display: flex;
-    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%), url("../assets/banner.jpg");
     min-height: 400px;
     background-attachment: fixed;
     background-position: center;
