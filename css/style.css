@@ -305,7 +305,14 @@ section {
     font-size:20px;
     font-weight:normal;
 }
-
+.textcontain{
+    display:flex;
+    gap:50px;
+    justify-content:center;
+}
+.text{
+ width:300px;
+}
 footer {
     display: flex;
     max-width: 100%;
