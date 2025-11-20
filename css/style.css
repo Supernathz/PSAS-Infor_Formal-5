@@ -83,7 +83,6 @@ nav a:hover {
     margin: 0;
     overflow: hidden;
     animation: slide 12s infinite;
-    opacity: 0;
 }
 
 section {
