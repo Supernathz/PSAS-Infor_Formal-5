@@ -1,4 +1,4 @@
-/*general*/
+ain/*general*/
 html {
     scroll-behavior: smooth;
 }
@@ -138,7 +138,7 @@ section {
     display: flex;
     height: auto;
     padding: 20px 20px 20px 20px;
-    background-image: radial-gradient(circle at center, rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("../assets/banner.jpg");
+    background-image: radial-gradient(circle at center, rgb(0,0,0,0)20%,rgb(0,0,0,0.8)100%),url("../assets/Desain.png");
     flex-direction: column;
     align-items: center;
     justify-content: center;
