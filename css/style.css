@@ -82,13 +82,6 @@ nav a:hover {
     font-size: 40px;
     margin: 0;
     overflow: hidden;
-}
-
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
     animation: slide 12s infinite;
     opacity: 0;
 }
