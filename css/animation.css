@@ -12,7 +12,7 @@
 }
 @keyframes slide {
     0%   { background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%),url("../assets/banner.jpg"); }
-    33%  { background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%),url("../assets/index.jpeg"); }
+    33%  { background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%),url("../assets/index.jpg"); }
     66%  { background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%),url("../assets/docking.jpg"); }
     100% { background-image: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%),url("../assets/banner.jpg"); }
 }
