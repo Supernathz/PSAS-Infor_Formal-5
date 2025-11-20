@@ -121,7 +121,7 @@ section {
 
 .collage {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-right: 50px;
 }
